@@ -1,5 +1,6 @@
 import User from "../models/userModel.js";
 import nodemailer from 'nodemailer';
+import { Result } from "express-validator";
 
 export async function insert(request, response) {
   //     const user = new User({
@@ -77,14 +78,30 @@ export async function insert(request, response) {
     if (error) {
       console.log(error);
     } else {
-      console.log('Email sent: ' + info.response);
-      response.json({
-        msg: `http://localhost:6700/candidates_resume/${request.file.filename}`
+      // console.log('Email sent: ' + info.response);
+      // response.json({
+      //   msg: `http://localhost:6700/candidates_resume/${request.file.filename}`
+      // })
+      const user = new User({
+        name: request.body.name,
+        email:request.body.email,
+        phone:request.body.phone,
+        message:request.body.message,
+        candidates_resume:request.file.filename
+      })
+
+      user.save()
+      .then(result => {
+        response.status(200).send({success:true, msg: "successfully send mail", _data: `http:localhost:4000/candidates_resume/${request.file.filename}` ,
+      new_user:result})
+      }).catch(e => {
+        response.status(400).send({success:false,error:e});
       })
     }
   });
 
 }
+
 
 export async function fetchAll(request, response) {
   try {

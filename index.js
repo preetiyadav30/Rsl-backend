@@ -19,8 +19,8 @@ app.use(function (req, res, next) {
 
 
 app.use("/candidates_resume", express.static("public/images"));
-
-mongoose.connect("mongodb://127.0.0.1:27017/RSL", {
+//mongodb+srv://YogeshGurjar:<password>@cluster0.zgip5ve.mongodb.net/<DATABASE>?retryWrites=true&w=majority
+mongoose.connect("mongodb+srv://preeti:Indore1234@cluster0.qzngd29.mongodb.net/RSL?retryWrites=true&w=majority", {
   useNewUrlParser: true,
   useUnifiedTopology: true
 }, (err) => {
