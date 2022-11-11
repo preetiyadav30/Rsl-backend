@@ -3,31 +3,7 @@ import nodemailer from 'nodemailer';
 import { Result } from "express-validator";
 
 export async function insert(request, response) {
-  //     const user = new User({
-  //       Name: request.body.Name,
-  //       Email: request.body.Email,
-  //       Phone: request.body.Phone,
-  //       Candidates_resume: request.file.filename,
-  //       Message: request.body.Message,
-  //   })
-  //   if(!user.Name||!user.Email||!user.Phone||!user.Candidates_resume||!user.Message)
-  //   {
-  //     response.status(400).send({
-  //       message: "Fill all required fields"
-  //     })
-  //   }
-  //   user.save().then((result) => {
-  //     response.status(201).json({
-  //         message: "save Successfully",
-  //         result:result
-  //     })
-
-  // })
-  // .catch((error) => {
-  //     response.status(500).json({
-  //         error: error
-  //     })
-  // })
+ 
   var transporter = nodemailer.createTransport({
     host: 'smtp.gmail.com',
     port: 587,
@@ -78,10 +54,7 @@ export async function insert(request, response) {
     if (error) {
       console.log(error);
     } else {
-      // console.log('Email sent: ' + info.response);
-      // response.json({
-      //   msg: `http://localhost:6700/candidates_resume/${request.file.filename}`
-      // })
+     
       const user = new User({
         name: request.body.name,
         email:request.body.email,
@@ -101,8 +74,6 @@ export async function insert(request, response) {
   });
 
 }
-
-
 export async function fetchAll(request, response) {
   try {
     const data = await User.find()
