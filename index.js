@@ -5,7 +5,7 @@ import userrouter from './routers/userRuter.js';
 const app = express()
 app.use(express.json());
 app.use(userrouter)
-const PORT = 6700;
+const PORT = 3000;
 
 app.use(cors({ origin: true }));
 
