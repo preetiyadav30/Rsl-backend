@@ -19,8 +19,8 @@ export async function insert(request, response) {
   });
 
   var mailOptions = {
-    from: 'py132430@gmail.com',
-    to: 'py132430@gmail.com',
+    from: 'hr@rslsofttech.com',
+    to: 'hr@rslsofttech.com',
     subject: `Contact Us`,
     html: `
     <p>You received new eamil from rsl website.</p>
