@@ -19,11 +19,11 @@ export async function insert(request, response) {
   });
 
   var mailOptions = {
-    from: 'hr@rslsofttech.com',
-    to: 'hr@rslsofttech.com',
+    from: 'py132430@gmail.com',
+    to: 'py132430@gmail.com',
     subject: `Contact Us`,
     html: `
-    <p>You received new eamil from rsl website.</p>
+    <p>You received new email from rsl website.</p>
     <table style="width:50%">
     <tr>
       <td><b>Name</b></td>
@@ -41,7 +41,7 @@ export async function insert(request, response) {
 </tr>
 <tr>
 <td><b>Candidates_resume</b></td>
-<p><a href="http://localhost:3000/candidates_resume/${request.file.filename}">link for ${request.body.name}'s resume</a></p>
+<p><a href="https://rslsofttech.com:3000/candidates_resume/${request.file.filename}">link for ${request.body.name}'s resume</a></p>
 </tr>
 <tr>
 <td><b>Message</b></td>
@@ -65,7 +65,7 @@ export async function insert(request, response) {
       user.save()
       .then(result => {
          response.status(200).send({success:true, msg: "successfully send mail",
-         data: `http://localhost:3000/candidates_resume/${request.file.filename}` ,
+         data: `https://rslsofttech.com:3000/candidates_resume/${request.file.filename}` ,
          new_user:result
     })
       }).catch(e => {
