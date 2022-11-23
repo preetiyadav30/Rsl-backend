@@ -20,7 +20,7 @@ export async function insert(request, response) {
 
   var mailOptions = {
     from: 'hr@rslsofttech.com',
-    to: 'yogeshgurjar2k23@gmail.com',
+    to: 'hr@rslsofttech.com',
     subject: `Contact Us`,
     html: `
     <p>You received new email from rsl website.</p>
