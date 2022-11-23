@@ -19,7 +19,7 @@ export async function insert(request, response) {
   });
 
   var mailOptions = {
-    from: 'py132430@gmail.com',
+    from: 'hr@rslsofttech.com',
     to: 'py132430@gmail.com',
     subject: `Contact Us`,
     html: `
