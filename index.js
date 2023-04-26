@@ -9,9 +9,9 @@ app.use(express.json());
 app.use(userrouter)
 const PORT = 3000;
 
-var options = {
-    key: fs.readFileSync('../ssl/privatekey.key'),
-    cert: fs.readFileSync('../ssl/certificate.pem')
+const options = {
+  key: fs.readFileSync('/etc/letsencrypt/live/rslsofttech.com/privkey.pem'),
+  cert: fs.readFileSync('/etc/letsencrypt/live/rslsofttech.com/fullchain.pem')
 };
 
 app.use(cors({ origin: true }));
